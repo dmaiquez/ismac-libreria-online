@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 public class Libro {
 
 	// manejo de component 
+	// otro comentario
 	private int idLibro;
 	private String titulo;
 	private String editorial;
