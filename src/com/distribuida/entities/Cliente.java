@@ -4,6 +4,9 @@ import java.util.Date;
 
 public class Cliente {
 	
+	
+	// estoy empezando a trabajar con el git y git hub
+	
 	// Atributos
 	private int idCliente;
 	private String cedula;
