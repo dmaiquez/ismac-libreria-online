@@ -37,7 +37,7 @@ public class Cliente {
 	private String telefono;
 	@Column(name = "correo")
 	private String correo;
-	
+		
 	
 	public Cliente () {}
 
