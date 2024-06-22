@@ -15,17 +15,26 @@ public class PrincipalCliente {
 
 		
 		// Patron de IoC Inversión de Control
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
-		
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");		
 		ClienteDAO clienteDAO = context.getBean("clienteDAOImpl", ClienteDAO.class);
 		
-		List<Cliente> clientes = clienteDAO.findAll();
 		
+		// CRUD
+		// add
+		Cliente cliente = new Cliente(0,"1759638659", "juan", "taipe","av. por ahi y mas alla.","099863253","jtaipe@correo.com");
+		clienteDAO.add(cliente);		
+		// up
+		Cliente cliente2 = new Cliente(40, "1759638652", "juan2", "taipe2","av. por ahi y mas alla.2","099863252","jtaipe2@correo.com");
+		clienteDAO.up(cliente2);				
+		// del
+		clienteDAO.del(40);
+		// findOne
+		//System.out.println("**************** DEL ********************* "+clienteDAO.findOne(39));
+		try {System.out.println("**************** DEL ********************* "+clienteDAO.findOne(40)); } catch(Exception e) { e.printStackTrace();}		
+		// find All		
+		clienteDAO.findAll().forEach(item -> { System.out.println(item.toString()); });
 		
-		clientes.forEach(item -> {			
-			System.out.println(item.toString());
-		});
-		
+				
 		context.close();
 		
 	}
